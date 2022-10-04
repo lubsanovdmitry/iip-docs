@@ -1,0 +1,57 @@
+\documentclass[14pt, a4paper]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+\usepackage[english,russian]{babel}
+\usepackage[left=2cm, right=1cm, vmargin=2cm]{geometry}
+\usepackage{indentfirst}
+\usepackage[nodisplayskipstretch]{setspace}
+\usepackage[]{amsfonts}
+\usepackage[]{amsmath}
+\usepackage[]{titlesec}
+\usepackage[dotinlabels]{titletoc}
+\usepackage[page,toc,titletoc,title]{appendix}
+%\usepackage{tocloft}
+
+
+\titleformat{\section}{\filcenter\normalfont\bfseries}{\thesection.}{2em}{}
+\titleformat{\subsection}{\filcenter\normalfont\bfseries}{\thesubsection.}{2em}{}
+\titleformat{\appendix}{\filcenter\normalfont\bfseries}{\thesection.}{2em}{}
+\titlespacing*{\section}{1pt}{1pt}{1pt}
+\dottedcontents{section}[2cm]{}{2em}{1pc}
+\dottedcontents{subsection}[4cm]{}{2em}{2pc}
+%\setlength{\cftsubsecindent}{2cm}
+%\setlength{\cftsubsubsecindent}{4cm}
+
+
+
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+\setlength\parindent{1.2cm}
+\onehalfspacing
+
+
+
+
+\begin{document}
+	\include{iip/title}
+	
+	
+	\setcounter{page}{2}
+	{
+		\tableofcontents
+		\clearpage
+	}
+	\include{iip/intro]}
+	
+	\section{Теоретическая часть}
+	
+	\section{Практическая часть}
+	
+	\include{iip/conclusion}
+	
+	\include{iip/biblio}
+	
+	\include{iip/appendix}
+	
+\end{document}
