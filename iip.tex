@@ -10,18 +10,21 @@
 \usepackage[]{titlesec}
 \usepackage[dotinlabels]{titletoc}
 \usepackage[page,toc,titletoc,title]{appendix}
-%\usepackage{tocloft}
+\usepackage[]{lipsum}
 
 
-\titleformat{\section}{\filcenter\normalfont\bfseries}{\thesection.}{2em}{}
+\titleformat{\section}{\filcenter\normalfont\bfseries}{Глава \thesection.}{1em}{}
 \titleformat{\subsection}{\filcenter\normalfont\bfseries}{\thesubsection.}{2em}{}
-\titleformat{\appendix}{\filcenter\normalfont\bfseries}{\thesection.}{2em}{}
+
 \titlespacing*{\section}{1pt}{1pt}{1pt}
-\dottedcontents{section}[2cm]{}{2em}{1pc}
-\dottedcontents{subsection}[4cm]{}{2em}{2pc}
+
+\titlecontents{section}[0em]{\normalsize}{Глава\space\thecontentslabel.\space\MakeUppercase}{}{\normalfont\dotfill\makebox[0em][l]{\thecontentspage}}
+\titlecontents{subsection}[2em]{\normalsize}{\thecontentslabel.\space}{}{\normalfont\dotfill\makebox[0em][l]\thecontentspage}
+
+%\dottedcontents{section}[2cm]{}{1.5em}{1pc}
+%\dottedcontents{subsection}[4cm]{}{2em }{2pc}
 %\setlength{\cftsubsecindent}{2cm}
 %\setlength{\cftsubsubsecindent}{4cm}
-
 
 
 \setmainfont{CMU Serif}
@@ -44,10 +47,14 @@
 	}
 	\include{iip/intro}
 	
-	\section{Теоретическая часть}
+	{
+		\section{Теоретическая часть}
+		
+	}
 	
-	\section{Практическая часть}
-	
+	{
+		\section{Практическая часть}
+	}
 	\include{iip/conclusion}
 	
 	\include{iip/biblio}
