@@ -1,4 +1,4 @@
-\documentclass[14pt, a4paper]{extarticle}
+\documentclass[14pt, a4paper]{extreport}
 \usepackage[utf8]{inputenc}
 \usepackage{fontspec}
 \usepackage[english,russian]{babel}
@@ -11,20 +11,26 @@
 \usepackage[dotinlabels]{titletoc}
 \usepackage[page,toc,titletoc,title]{appendix}
 \usepackage[]{lipsum}
+\usepackage[]{caption}
+\usepackage{enumitem}
 
-
-\titleformat{\section}{\filcenter\normalfont\bfseries}{Глава \thesection.}{1em}{}
-\titleformat{\subsection}{\filcenter\normalfont\bfseries}{\thesubsection.}{2em}{}
+\titleformat{\chapter}{\filcenter\normalfont\bfseries\MakeUppercase}{Глава \thechapter.}{1em}{}
+\titleformat{\section}{\filcenter\normalfont\bfseries}{\thesection.}{1em}{}
+\titleformat{\subsection}{\filcenter\normalfont\bfseries}{\thesubsection.}{1em}{}
+\titleformat{\appendix}{\filcenter\normalfont\bfseries}{}{1em}{}
 
 \titlespacing*{\section}{1pt}{1pt}{1pt}
+\titlespacing*{\chapter}{1pt}{1pt}{1pt}
 
-\titlecontents{section}[0em]{\normalsize}{Глава\space\thecontentslabel.\space\MakeUppercase}{}{\normalfont\dotfill\makebox[0em][l]{\thecontentspage}}
-\titlecontents{subsection}[2em]{\normalsize}{\thecontentslabel.\space}{}{\normalfont\dotfill\makebox[0em][l]\thecontentspage}
+\titlecontents{chapter}[0em]{\normalsize}{ГЛАВА\space\thecontentslabel.\space\MakeUppercase}{}{\normalfont\dotfill\makebox[0em][l]{\thecontentspage}}
+\titlecontents{section}[2em]{\normalsize}{\thecontentslabel.\space}{}{\normalfont\dotfill\makebox[0em][l]\thecontentspage}
 
 %\dottedcontents{section}[2cm]{}{1.5em}{1pc}
 %\dottedcontents{subsection}[4cm]{}{2em }{2pc}
 %\setlength{\cftsubsecindent}{2cm}
 %\setlength{\cftsubsubsecindent}{4cm}
+
+\setlist[enumerate,itemize]{leftmargin=19mm,partopsep=0pt,topsep=0pt,itemsep=0.3cm,noitemsep}
 
 
 \setmainfont{CMU Serif}
@@ -41,6 +47,7 @@
 	
 	
 	\setcounter{page}{2}
+	
 	{
 		\tableofcontents
 		\clearpage
@@ -48,12 +55,13 @@
 	\include{iip/intro}
 	
 	{
-		\section{Теоретическая часть}
-		
+		\chapter{Теоретическая часть}
+			\section{}
 	}
 	
 	{
-		\section{Практическая часть}
+		\chapter{Практическая часть}
+		
 	}
 	\include{iip/conclusion}
 	
