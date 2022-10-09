@@ -7,12 +7,14 @@
 \usepackage[nodisplayskipstretch]{setspace}
 \usepackage[]{amsfonts}
 \usepackage[]{amsmath}
+
 \usepackage[]{titlesec}
 \usepackage[dotinlabels]{titletoc}
 \usepackage[page,toc,titletoc,title]{appendix}
 \usepackage[]{lipsum}
 \usepackage[]{caption}
 \usepackage{enumitem}
+
 
 \titleformat{\chapter}{\filcenter\normalfont\bfseries\MakeUppercase}{Глава \thechapter.}{1em}{}
 \titleformat{\section}{\filcenter\normalfont\bfseries}{\thesection.}{1em}{}
@@ -39,8 +41,8 @@
 \setlength\parindent{1.2cm}
 \onehalfspacing
 
-
-
+%\setmainfont{Times New Roman}
+\usepackage[hidelinks]{hyperref}
 
 \begin{document}
 	\include{iip/title}
@@ -48,10 +50,12 @@
 	
 	\setcounter{page}{2}
 	
-	{
+	\begin{NoHyper}
 		\tableofcontents
 		\clearpage
-	}
+	\end{NoHyper}
+		
+	
 	\include{iip/intro}
 	
 	{
