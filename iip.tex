@@ -26,6 +26,7 @@
 
 \titlecontents{chapter}[0em]{\normalsize}{ГЛАВА\space\thecontentslabel.\space\MakeUppercase}{}{\normalfont\dotfill\makebox[0em][l]{\thecontentspage}}
 \titlecontents{section}[2em]{\normalsize}{\thecontentslabel.\space}{}{\normalfont\dotfill\makebox[0em][l]\thecontentspage}
+\titlecontents{subsection}[4em]{\normalsize}{\thecontentslabel.\space}{}{\normalfont\dotfill\makebox[0em][l]\thecontentspage}
 
 %\dottedcontents{section}[2cm]{}{1.5em}{1pc}
 %\dottedcontents{subsection}[4cm]{}{2em }{2pc}
@@ -59,12 +60,14 @@
 	\include{iip/intro}
 	
 	{
-		\chapter{Теоретическая часть}
-			\section{}
+		{
+			\include{iip/theory1}
+			
+		}
 	}
 	
 	{
-		\chapter{Практическая часть}
+		\chapter{Реализация}
 		
 	}
 	\include{iip/conclusion}
