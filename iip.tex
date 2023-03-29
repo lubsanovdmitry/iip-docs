@@ -17,6 +17,7 @@
 \usepackage[]{lipsum}
 \usepackage[]{caption}
 \usepackage{enumitem}
+\usepackage{listings}
 
 
 \titleformat{\chapter}{\filcenter\normalfont\bfseries\MakeUppercase}{Глава \thechapter.}{1em}{}
@@ -55,10 +56,14 @@
 	
 	\setcounter{page}{2}
 	
+	
 	\begin{NoHyper}
 		\tableofcontents
 		\clearpage
 	\end{NoHyper}
+	
+	
+	
 		
 	
 	\include{iip/intro}
@@ -71,7 +76,7 @@
 	}
 	
 	{
-		\chapter{Реализация}
+		\include{iip/realiz1}
 		
 	}
 	\include{iip/conclusion}
