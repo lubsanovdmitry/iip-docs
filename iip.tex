@@ -10,6 +10,7 @@
 \usepackage[]{tikz}  
 \usetikzlibrary{graphs}
 \usepackage[]{istgame}
+\usepackage[]{forest}
 
 \usepackage[]{titlesec}
 \usepackage[dotinlabels]{titletoc}
@@ -49,6 +50,21 @@
 
 %\setmainfont{Times New Roman}
 \usepackage[hidelinks]{hyperref}
+
+
+%Set forest
+
+\forestset{
+	end node/.style={draw,rectangle, fill=gray!10,minimum width=1cm},
+	chess tree/.style={for tree={align=center,edge={-latex},s sep=1cm,l sep=.8cm,
+			where n children=0{end node, edge={-}}{delay={draw, circle,minimum size=1cm, 
+					if={iseven(level())}{fill=white}{fill=black!20}}},
+				label={[anchor=south]above:#1},	
+			}},
+	move/.style={if n=1{edge label={node[midway,left]{#1}}}
+		{edge label={node [midway, right]{#1}}}},
+}
+
 
 \begin{document}
 	\include{iip/title}
